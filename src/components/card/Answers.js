@@ -1,12 +1,25 @@
 import React from "react";
 
-const Answers = ({incorrectAnswers, correctAnswer}) => {
+import mixItUp from "../../modules/mixItUp";
+
+const Answers = ({ incorrectAnswers, correctAnswer }) => {
+  const answerArray = [
+    incorrectAnswers[1],
+    incorrectAnswers[0],
+    incorrectAnswers[2],
+    correctAnswer,
+  ];
+
+  console.log(answerArray);
+  console.log(mixItUp(answerArray));
+
+  const shuffledArray = mixItUp(answerArray);
+
   return (
     <>
-      <div>{incorrectAnswers[1]}</div>
-      <div>{incorrectAnswers[0]}</div>
-      <div>{incorrectAnswers[2]}</div>
-      <div>{correctAnswer}</div>
+      {shuffledArray.map((res) => (
+        <div key={res}>{res}</div>
+      ))}
     </>
   );
 };

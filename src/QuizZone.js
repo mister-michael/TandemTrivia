@@ -22,7 +22,7 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-1" style={{display: "block"}}>
             <QuestionCard
               questionId="1"
-              color={"black"}
+              color={"#FD7676"}
               question={randomTen[0].question}
               incorrectAnswers={randomTen[0].incorrect}
               correctAnswer={randomTen[0].correct}
@@ -32,7 +32,17 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-2" style={{display: "none"}}>
             <QuestionCard
               questionId="2"
-              color={"black"}
+              color={"#FDB776"}
+              question={randomTen[1].question}
+              incorrectAnswers={randomTen[1].incorrect}
+              correctAnswer={randomTen[1].correct}
+              next={next}
+            />
+          </div>
+          <div id="div-3" style={{display: "none"}}>
+            <QuestionCard
+              questionId="3"
+              color={"#FDE776"}
               question={randomTen[1].question}
               incorrectAnswers={randomTen[1].incorrect}
               correctAnswer={randomTen[1].correct}
