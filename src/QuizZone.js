@@ -75,6 +75,83 @@ const QuizZone = ({ randomTen }) => {
               updateScore={updateScore}
             />
           </div>
+          <div id="div-4" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="4"
+              bgColor={colors.yellow}
+              question={randomTen[3].question}
+              incorrectAnswers={randomTen[3].incorrect}
+              correctAnswer={randomTen[3].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-5" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="5"
+              bgColor={colors.lightGreen}
+              question={randomTen[4].question}
+              incorrectAnswers={randomTen[4].incorrect}
+              correctAnswer={randomTen[4].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-6" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="6"
+              bgColor={colors.cyan}
+              question={randomTen[5].question}
+              incorrectAnswers={randomTen[5].incorrect}
+              correctAnswer={randomTen[5].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-7" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="7"
+              bgColor={colors.lightBlue}
+              question={randomTen[6].question}
+              incorrectAnswers={randomTen[6].incorrect}
+              correctAnswer={randomTen[6].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-8" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="8"
+              bgColor={colors.blue}
+              question={randomTen[7].question}
+              incorrectAnswers={randomTen[7].incorrect}
+              correctAnswer={randomTen[7].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-9" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="9"
+              bgColor={colors.violet}
+              question={randomTen[8].question}
+              incorrectAnswers={randomTen[8].incorrect}
+              correctAnswer={randomTen[8].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+          <div id="div-10" style={{ display: "none" }}>
+            <QuestionCard
+              questionId="10"
+              bgColor={colors.magenta}
+              question={randomTen[9].question}
+              incorrectAnswers={randomTen[9].incorrect}
+              correctAnswer={randomTen[9].correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
         </>
       )}
     </div>

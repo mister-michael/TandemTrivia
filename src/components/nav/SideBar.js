@@ -1,28 +1,24 @@
 import React from "react";
 
+import colors from '../../modules/colors';
 import NavCard from "./NavCard";
 
-const SideBar = ({ currentTab, setCurrentTab, lastTab, setLastTab }) => {
-
-  const changeTab = (evt) => {
-    const tabNumber = document.getElementById(`${evt.target.id}`);
-    console.log(evt.target.id)
-  };
+const SideBar = () => {
 
   return (
-    <div style={{ width: "25%", backgroundColor: "black" }}>
-      <NavCard tab={"0"} color={"#474242"} number={"?"} changeTab={changeTab}/>
-      <NavCard tab={"1"} color={"#FD7676"} number={"1"} changeTab={changeTab}/>
-      <NavCard tab={"2"} color={"#FDB776"} number={"2"} changeTab={changeTab}/>
-      <NavCard tab={"3"} color={"#FDE776"} number={"3"} />
-      <NavCard tab={"4"} color={"#C2FD76"} number={"4"} />
-      <NavCard tab={"5"} color={"#89FD76"} number={"5"} />
-      <NavCard tab={"6"} color={"#76FDED"} number={"6"} />
-      <NavCard tab={"7"} color={"#76CCFD"} number={"7"} />
-      <NavCard tab={"8"} color={"#7683FD"} number={"8"} />
-      <NavCard tab={"9"} color={"#B542FC"} number={"9"} />
-      <NavCard tab={"10"} color={"#F842FC"} number={"10"} />
-      <NavCard tab={"11"} color={"#E8DBE9"} number={"!"} />
+    <div style={{ width: "25%", backgroundColor: "black", maxWidth: "300px" }}>
+      <NavCard key={"NavCardTab0"} tab={"0"} color={colors.black} number={"?"} />
+      <NavCard key={"NavCardTab1"} tab={"1"} color={colors.red} number={"1"} />
+      <NavCard key={"NavCardTab2"} tab={"2"} color={colors.orange} number={"2"} />
+      <NavCard key={"NavCardTab3"} tab={"3"} color={colors.yellow} number={"3"} />
+      <NavCard key={"NavCardTab4"} tab={"4"} color={colors.lightGreen} number={"4"} />
+      <NavCard key={"NavCardTab5"} tab={"5"} color={colors.green} number={"5"} />
+      <NavCard key={"NavCardTab6"} tab={"6"} color={colors.cyan} number={"6"} />
+      <NavCard key={"NavCardTab7"} tab={"7"} color={colors.lightBlue} number={"7"} />
+      <NavCard key={"NavCardTab8"} tab={"8"} color={colors.blue} number={"8"} />
+      <NavCard key={"NavCardTab9"} tab={"9"} color={colors.violet} number={"9"} />
+      <NavCard key={"NavCardTab10"} tab={"10"} color={colors.magenta} number={"10"} />
+      <NavCard key={"NavCardTab11"} tab={"11"} color={colors.lightGray} number={"!"} />
     </div>
   );
 };

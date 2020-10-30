@@ -7,8 +7,6 @@ import TandemTrivia from "./TandemTrivia";
 function App() {
   const [randomTen, setRandomTen] = useState(null);
 
-  
-
   async function getQs() {
     await API.get().then((resp) => {
       console.log(resp);
