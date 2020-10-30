@@ -1,11 +1,11 @@
 import React from "react";
 
-const CardHeader = ({ color, question }) => {
+const CardHeader = ({ bgColor, fontColor, question }) => {
   return (
     <div
       style={{
-        backgroundColor: color,
-        color: "white",
+        backgroundColor: bgColor,
+        color: fontColor,
         padding: "10%",
         overflow: "hidden",
       }}

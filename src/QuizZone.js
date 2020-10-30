@@ -22,7 +22,8 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-1" style={{display: "block"}}>
             <QuestionCard
               questionId="1"
-              color={"#FD7676"}
+              bgColor={"#FD7676"}
+              fontColor={"white"}
               question={randomTen[0].question}
               incorrectAnswers={randomTen[0].incorrect}
               correctAnswer={randomTen[0].correct}
@@ -32,7 +33,7 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-2" style={{display: "none"}}>
             <QuestionCard
               questionId="2"
-              color={"#FDB776"}
+              bgColor={"#FDB776"}
               question={randomTen[1].question}
               incorrectAnswers={randomTen[1].incorrect}
               correctAnswer={randomTen[1].correct}
@@ -42,7 +43,7 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-3" style={{display: "none"}}>
             <QuestionCard
               questionId="3"
-              color={"#FDE776"}
+              bgColor={"#FDE776"}
               question={randomTen[1].question}
               incorrectAnswers={randomTen[1].incorrect}
               correctAnswer={randomTen[1].correct}

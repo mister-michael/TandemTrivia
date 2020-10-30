@@ -4,9 +4,10 @@ import Button from "./Button";
 import CardHeader from "./CardHeader";
 
 const QuestionCard = ({
-  color,
+  bgColor,
   correctAnswer,
   questionId = { id: questionId },
+  fontColor,
   incorrectAnswers,
   next,
   question,
@@ -14,7 +15,7 @@ const QuestionCard = ({
   return (
     <>
       <div id={`container-${questionId}`} style={{ display: "block" }}>
-        <CardHeader color={color} question={question} />
+        <CardHeader bgColor={bgColor} fontColor={fontColor} question={question} />
         <div style={{ padding: "5%" }}>
           <Answers
             incorrectAnswers={incorrectAnswers}
