@@ -11,7 +11,7 @@ const EndCard = ({score}) => {
             marginBottom: "20px",
             padding: "0px 10px",
           }}>
-            <CardHeader bgColor={colors.lightGray}
+            <CardHeader bgColor={colors.black}
           fontColor={"white"}
           question={"Congratulations! Your final score is..."}/>
           <Score score={score}/>

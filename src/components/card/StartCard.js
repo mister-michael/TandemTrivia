@@ -18,14 +18,18 @@ const StartCard = ({ next }) => {
   };
 
   const submitAnswer = (e) => {
-    document.getElementById(`${e.target.id}`).style.backgroundColor =
-      colors.black;
-    document.getElementById(`${e.target.id}`).style.color = "white";
+    const yourAnswer = document.getElementById(`${e.target.id}`);
+    yourAnswer.style.color = "red";
 
-    document.getElementById(`${correctAnswer}`).style.backgroundColor = "green";
-    document.getElementById(`${correctAnswer}`).style.color = "white";
-    document.getElementById(`${correctAnswer}`).style.borderColor = "gold";
-    document.getElementById(`${correctAnswer}`).style.borderWidth = "4px";
+    const theCorrectAnswer = document.getElementById(`${correctAnswer}`);
+    theCorrectAnswer.style.backgroundColor = colors.black;
+    theCorrectAnswer.style.color = "white";
+    theCorrectAnswer.style.outlineColor = "gold";
+    theCorrectAnswer.style.outlineWidth = "2px";
+    theCorrectAnswer.style.outlineStyle = "solid";
+    theCorrectAnswer.style.borderWidth = "0px";
+
+    theCorrectAnswer.style.fontWeight = "bold";
   };
   return (
     <>
@@ -43,9 +47,7 @@ const StartCard = ({ next }) => {
             is a practice question. The next ten questions are the real deal,
             Ally McBeal.{" "}
           </div>
-          <div>
-              
-          </div>
+          <div></div>
         </div>
         <CardHeader
           bgColor={colors.black}
@@ -53,27 +55,33 @@ const StartCard = ({ next }) => {
           question={"Should you click on a gray box to answer a question?"}
         />
         <>
-          {answers.map((res) => (
-            <div
-              key={"res"}
-              style={{
-                backgroundColor: "lightgray",
-                borderColor: "black",
-                borderWidth: "1px",
-                borderStyle: "solid",
-                margin: "4px",
-                padding: "4px",
-              }}
-              // for={res}
-              id={res}
-              onClick={(e) => {
-                showButton();
-                submitAnswer(e);
-              }}
-            >
-              {res}
-            </div>
-          ))}
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+            {answers.map((res) => (
+              <div
+                key={"res"}
+                style={{
+                  backgroundColor: "lightgray",
+                  borderColor: "black",
+                  borderWidth: "1px",
+                  borderStyle: "solid",
+                  margin: "4px",
+                  padding: "10px",
+                  paddingTop: "10px",
+                  marginTop: "20px",
+                  paddingLeft: "20px",
+                  width: "40%",
+                }}
+                // for={res}
+                id={res}
+                onClick={(e) => {
+                  showButton();
+                  submitAnswer(e);
+                }}
+              >
+                {res}
+              </div>
+            ))}
+          </div>
         </>
 
         <div id="start-button" style={{ display: "none" }}>

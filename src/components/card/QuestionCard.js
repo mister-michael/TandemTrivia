@@ -22,7 +22,7 @@ const QuestionCard = ({
           fontColor={fontColor}
           question={question}
         />
-        <div style={{ padding: "5%" }}>
+        <div style={{ padding: "5%", paddingTop: "5px" }}>
           <Answers
             key={`answers--${questionId}`}
             bgColor={bgColor}
