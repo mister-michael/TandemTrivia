@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+import API from "./modules/apiManager";
+import shuffle from './modules/mixItUp';
+import TandemTrivia from "./TandemTrivia";
 
 function App() {
+  const [randomTen, setRandomTen] = useState(null);
+
+  async function getQs() {
+    await API.get().then((resp) => {
+      console.log(resp);
+      const shuffledResp = shuffle(resp);
+      setRandomTen(shuffledResp.splice(0, 10));
+    });
+  }
+
+  useEffect(() => {
+    getQs();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ minWidth: "900px" }}>
+      <TandemTrivia randomTen={randomTen}/>
     </div>
   );
 }
