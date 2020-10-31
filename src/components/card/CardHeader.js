@@ -8,7 +8,7 @@ const CardHeader = ({ bgColor, fontColor = "white", question }) => {
         color: fontColor,
         padding: "40px",
         overflow: "hidden",
-        maxWidth: "400px",
+        maxWidth: "600px",
         fontWeight: "bold",
         fontSize: "2em"
       }}
