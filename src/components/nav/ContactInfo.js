@@ -4,7 +4,7 @@ import colors from "../../modules/colors";
 
 const ContactInfo = () => {
   return (
-    <div style={{ color: colors.white, padding: "20px" }}>
+    <div style={{ color: colors.white, padding: "20px", marginTop: "15px" }}>
       <div> Michael Clark 2020</div>
       <div>
         <div style={{ color: "blue", fontSize: "40px" }}>

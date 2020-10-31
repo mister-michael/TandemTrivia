@@ -74,51 +74,66 @@ const StartCard = ({ next }) => {
           </div>
           <div></div>
         </div>
-        <CardHeader
-          bgColor={colors.black}
-          fontColor={"white"}
-          question={"Should you click on a gray box to answer a question?"}
-        />
-        <>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {answers.map((res) => (
-              <div
-                key={res}
-                style={{
-                  backgroundColor: "lightgray",
-                  borderColor: "black",
-                  borderWidth: "1px",
-                  borderStyle: "solid",
-                  margin: "4px",
-                  padding: "10px",
-                  paddingTop: "10px",
-                  marginTop: "20px",
-                  paddingLeft: "20px",
-                  width: "40%",
-                  cursor: "pointer",
-                  fontWeight: "bold"
-                }}
-                // for={res}
-                id={res}
-                onClick={(e) => {
-                  showButton();
-                  submitAnswer(e);
-                }}
-              >
-                {res}
-              </div>
-            ))}
-          </div>
-        </>
+        <div
+          style={{
+            borderRadius: "20px",
+            overflow: "hidden",
+            borderColor: colors.black,
+            borderWidth: "3px",
+            borderStyle: "solid",
+          }}
+        >
+          <CardHeader
+            bgColor={colors.black}
+            fontColor={"white"}
+            question={"Should you click on a gray box to answer a question?"}
+          />
+          <>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {answers.map((res) => (
+                <div
+                  key={res}
+                  style={{
+                    backgroundColor: "lightgray",
+                    margin: "4px",
+                    padding: "10px",
+                    paddingTop: "10px",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    paddingLeft: "20px",
+                    width: "40%",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                    justifyContent: "center",
+                    borderRadius: "5px"
+                  }}
+                  id={res}
+                  onClick={(e) => {
+                    showButton();
+                    submitAnswer(e);
+                  }}
+                >
+                  {res}
+                </div>
+              ))}
+            </div>
+          </>
 
-        <div id="start-button" style={{ display: "none" }}>
-          <Button name="start" buttonId={"0"} handleFunction={next} />
+          <div id="start-button" style={{ display: "none", marginTop: "20px", marginLeft: "400px", marginBottom: "20px" }}>
+            <Button
+              name="start quiz"
+              buttonId={"0"}
+              handleFunction={next}
+              bgColor={colors.black}
+              fontColor={colors.white}
+            />
+          </div>
         </div>
       </div>
     </>

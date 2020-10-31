@@ -52,9 +52,9 @@ const QuizZone = ({ randomTen = null }) => {
       <div
         style={{
           maxWidth: "600px",
+          alignItems: "center",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
           marginLeft: "10px",
         }}
       >
@@ -65,14 +65,14 @@ const QuizZone = ({ randomTen = null }) => {
         {questionObject && (
           <div id="div-1" style={{ display: "none" }}>
             <QuestionCard
-              key={`questionCard--${questionNumber}`}
-              questionId={questionNumber}
               bgColor={colorArray[questionNumber][0]}
-              fontColor={colorArray[questionNumber][1]}
-              question={questionObject.question}
-              incorrectAnswers={questionObject.incorrect}
               correctAnswer={questionObject.correct}
+              key={`questionCard--${questionNumber}`}
+              fontColor={colorArray[questionNumber][1]}
+              incorrectAnswers={questionObject.incorrect}
               next={next}
+              question={questionObject.question}
+              questionId={questionNumber}
               updateScore={updateScore}
             />
           </div>
