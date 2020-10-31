@@ -11,6 +11,7 @@ const NavCard = ({ color, number }) => {
         flexDirection: "row",
         justifyContent: "center",
         padding: "5%",
+        height: "5vh"
       }}
     >
       <CircleIcon number={number} style={{ padding: "5%" }} />

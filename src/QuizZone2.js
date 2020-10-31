@@ -48,33 +48,40 @@ const QuizZone2 = ({ randomTen = null }) => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-      }}
-    >
-      <div id="div-0" style={{ display: "block" }}>
-        <StartCard next={startQuiz} />
-      </div>
-      {questionObject && (
-        <div id="div-1" style={{ display: "none" }}>
-          <QuestionCard
-            questionId={questionNumber}
-            bgColor={colorArray[questionNumber][0]}
-            fontColor={colorArray[questionNumber][1]}
-            question={questionObject.question}
-            incorrectAnswers={questionObject.incorrect}
-            correctAnswer={questionObject.correct}
-            next={next}
-            updateScore={updateScore}
-          />
+    <>
+      
+      <div
+        style={{
+          maxWidth: "600px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: "10px"
+        }}
+      >
+        <div id="div-0" style={{ display: "block" }}>
+          <StartCard next={startQuiz} />
         </div>
-      )}
+        {questionObject && (
+          <div id="div-1" style={{ display: "none" }}>
+            <QuestionCard
+              questionId={questionNumber}
+              bgColor={colorArray[questionNumber][0]}
+              fontColor={colorArray[questionNumber][1]}
+              question={questionObject.question}
+              incorrectAnswers={questionObject.incorrect}
+              correctAnswer={questionObject.correct}
+              next={next}
+              updateScore={updateScore}
+            />
+          </div>
+        )}
 
-      <div id="div-3" style={{ display: "none" }}>
-        <EndCard score={scoreCount} />
+        <div id="div-3" style={{ display: "none" }}>
+          <EndCard score={scoreCount} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
