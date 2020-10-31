@@ -1,17 +1,19 @@
 import React from "react";
 import colors from "../../modules/colors";
+import mixItUp from "../../modules/mixItUp";
 import Button from "./Button";
 import CardHeader from "./CardHeader";
 
 const StartCard = ({ next }) => {
   const correctAnswer = "Yes Indeedy Do";
 
-  const answers = [
+  const answers = mixItUp([
     "Most definitely",
     "Assuredly",
     "Yes Indeedy Do",
     "Totes McGotes",
-  ];
+  ]);
+  
 
   const showButton = () => {
     document.getElementById("start-button").style.display = "block";
@@ -24,10 +26,9 @@ const StartCard = ({ next }) => {
     const theCorrectAnswer = document.getElementById(`${correctAnswer}`);
     theCorrectAnswer.style.backgroundColor = colors.black;
     theCorrectAnswer.style.color = "white";
-    theCorrectAnswer.style.outlineColor = "gold";
-    theCorrectAnswer.style.outlineWidth = "2px";
-    theCorrectAnswer.style.outlineStyle = "solid";
-    theCorrectAnswer.style.borderWidth = "0px";
+    theCorrectAnswer.style.borderColor = "gold";
+    theCorrectAnswer.style.borderWidth = "2px";
+    theCorrectAnswer.style.borderStyle = "solid";
 
     theCorrectAnswer.style.fontWeight = "bold";
   };

@@ -15,10 +15,15 @@ const EndCard = ({ score }) => {
         fontStyle: "italic",
         marginBottom: "20px",
         padding: "0px 10px",
+        borderRadius: "20px",
+            overflow: "hidden",
+            borderColor: colors.black,
+            borderWidth: "3px",
+            borderStyle: "solid",
       }}
     >
       <CardHeader
-        bgColor={colors.white}
+        bgColor={""}
         fontColor={colors.black}
         question={"Congrats! Your final score is..."}
       />
