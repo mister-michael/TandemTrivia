@@ -18,9 +18,6 @@ const Answers = ({
   for (let i = 0; i < incorrectAnswers.length; i++)
     answerArray.push(incorrectAnswers[i]);
 
-  //   console.log(answerArray);
-  //   console.log(mixItUp(answerArray));
-
   const shuffledArray = mixItUp(answerArray);
 
   let isCorrect = false;
@@ -66,8 +63,6 @@ const Answers = ({
     if (buttonId === "0" || buttonId === "11") {
       const getButton = document.getElementById(`button-div-${buttonId}`);
       getButton.style.display = "block";
-      console.log(getButton);
-      console.log(buttonId, "buttonId");
     }
   }, []);
   return (
@@ -76,7 +71,8 @@ const Answers = ({
         {shuffledArray.map((res) => (
           <>
             <div
-              key={res}
+            
+              key={`answer--${res}`}
               style={{
                 backgroundColor: "lightgray",
                 borderColor: "black",
@@ -87,7 +83,9 @@ const Answers = ({
                 paddingTop: "10px",
                 marginTop: "20px",
                 paddingLeft: "20px",
-                width: "40%"
+                width: "40%",
+                cursor: "pointer",
+                fontWeight: "bold",
               }}
               // for={res}
               id={res}

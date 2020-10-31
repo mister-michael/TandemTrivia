@@ -1,4 +1,5 @@
 import React from "react";
+
 import CircleIcon from "./CircleIcon";
 
 const NavCard = ({ color, number }) => {

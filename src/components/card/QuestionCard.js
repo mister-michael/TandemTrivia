@@ -1,6 +1,6 @@
 import React from "react";
+
 import Answers from "./Answers";
-import Button from "./Button";
 import CardHeader from "./CardHeader";
 
 const QuestionCard = ({
