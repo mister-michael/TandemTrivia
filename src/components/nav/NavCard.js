@@ -1,10 +1,9 @@
 import React from "react";
 import CircleIcon from "./CircleIcon";
 
-const NavCard = ({ color, number, changeTab, tab }) => {
+const NavCard = ({ color, number }) => {
   return (
-    <div id={tab}
-    onClick={evt => changeTab(evt)}
+    <div
       style={{
         minWidth: "200px",
         backgroundColor: color,

@@ -22,6 +22,8 @@ const Answers = ({
 
   const shuffledArray = mixItUp(answerArray);
 
+  let isCorrect = false;
+
   const submitAnswer = (e) => {
     const yourAnswer = document.getElementById(`${e.target.id}`);
     yourAnswer.style.backgroundColor = bgColor;
@@ -33,24 +35,28 @@ const Answers = ({
     theCorrectAnswer.style.borderWidth = "4px";
 
     if (e.target.id === correctAnswer) {
-      updateScore();
+      isCorrect = true;
     }
-};
+  };
 
-const showButton = () => {
-    const getButton = document.getElementById(`button-div-${buttonId}`)
-    getButton.style.display = "block"
-};
+  const showButton = () => {
+    const getButton = document.getElementById(`button-div-${buttonId}`);
+    getButton.style.display = "block";
+  };
 
-useEffect(()=> {
+  const nextQuestion = () => {
+    if (isCorrect === true) updateScore();
+    handleFunction();
+  }
 
+  useEffect(() => {
     if (buttonId === "0" || buttonId === "11") {
-        const getButton = document.getElementById(`button-div-${buttonId}`)
-        getButton.style.display = "block"
-        console.log(getButton)
-        console.log(buttonId, "buttonId")
-      }
-}, [])
+      const getButton = document.getElementById(`button-div-${buttonId}`);
+      getButton.style.display = "block";
+      console.log(getButton);
+      console.log(buttonId, "buttonId");
+    }
+  }, []);
   return (
     <>
       {shuffledArray.map((res) => (
@@ -68,8 +74,8 @@ useEffect(()=> {
             // for={res}
             id={res}
             onClick={(e) => {
-                submitAnswer(e)
-                showButton()
+              showButton();
+              submitAnswer(e);
             }}
           >
             {res}
@@ -81,7 +87,7 @@ useEffect(()=> {
           name={name}
           buttonId={buttonId}
           name="next"
-          handleFunction={handleFunction}
+          handleFunction={nextQuestion}
         >
           next
         </Button>

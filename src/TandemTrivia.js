@@ -3,9 +3,10 @@ import QuestionCard from "./components/card/QuestionCard";
 
 import SideBar from "./components/nav/SideBar";
 import QuizZone from "./QuizZone";
+import QuizZone2 from "./QuizZone2";
 
 const TandemTrivia = ({ randomTen }) => {
-
+console.log(randomTen)
   return (
     <>
       <div
@@ -20,7 +21,7 @@ const TandemTrivia = ({ randomTen }) => {
             margin: "45px",
           }}
         >
-          <QuizZone randomTen={randomTen} />
+          <QuizZone2 randomTen={randomTen} />
           
         </div>
       </div>

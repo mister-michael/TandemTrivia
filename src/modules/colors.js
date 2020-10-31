@@ -10,5 +10,6 @@ export default {
     blue: "#7683FD",
     violet: "#B542FC",
     magenta: "#F842FC",
-    lightGray: "#E8DBE9"
+    lightGray: "#E8DBE9",
+    white: "white",
 }
