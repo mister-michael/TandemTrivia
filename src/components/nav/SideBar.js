@@ -1,12 +1,19 @@
 import React from "react";
 
-import colors from '../../modules/colors';
+import colors from "../../modules/colors";
 import NavCard from "./NavCard";
 
 const SideBar = () => {
-
   return (
-    <div style={{ width: "25%", backgroundColor: "black", maxWidth: "300px", minHeight: "800px", height: "100vh" }}>
+    <div
+      style={{
+        width: "25%",
+        backgroundColor: "black",
+        maxWidth: "300px",
+        minHeight: "800px",
+        height: "100vh",
+      }}
+    >
       <NavCard key={"NavCardTab0"} color={colors.black} number={"?"} />
       <NavCard key={"NavCardTab1"} color={colors.red} number={"1"} />
       <NavCard key={"NavCardTab2"} color={colors.orange} number={"2"} />
@@ -19,7 +26,22 @@ const SideBar = () => {
       <NavCard key={"NavCardTab9"} color={colors.violet} number={"9"} />
       <NavCard key={"NavCardTab10"} color={colors.magenta} number={"10"} />
       <NavCard key={"NavCardTab11"} color={colors.black} number={"!"} />
-      <div style={{color: colors.white}}> by Michael Clark 2020</div>
+      <div style={{ color: colors.white, padding: "20px" }}>
+        <div> Michael Clark 2020</div>
+        <div >
+          <div style={{color: "blue", fontSize: "40px"}}>
+            <a href="https://www.linkedin.com/in/michaelclarknashville/">
+              LinkedIn
+            </a>
+          </div>
+          <div style={{color: "blue", fontSize: "40px"}}>
+            <a href="https://www.michaelclarknashville.com">portfolio</a>
+          </div>
+          <div style={{color: "blue", fontSize: "40px"}}>
+            <a href="https://www.michaelclarknashville.com">hipstar</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

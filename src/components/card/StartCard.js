@@ -43,7 +43,7 @@ const StartCard = ({ next }) => {
           }}
         >
           <div>
-            Welcome to Tandem Trivia. Correct answers will appear in Green. This
+            Welcome to Tandem Trivia. Incorrect Answers will appear with RED font. This
             is a practice question. The next ten questions are the real deal,
             Ally McBeal.{" "}
           </div>
