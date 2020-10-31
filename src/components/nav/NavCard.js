@@ -1,7 +1,8 @@
 import React from "react";
+
 import CircleIcon from "./CircleIcon";
 
-const NavCard = ({ color, number }) => {
+const NavCard = ({ color, number, fontSize }) => {
   return (
     <div
       style={{
@@ -14,7 +15,7 @@ const NavCard = ({ color, number }) => {
         height: "3vh"
       }}
     >
-      <CircleIcon number={number} style={{ padding: "5%" }} />
+      <CircleIcon number={number} style={{ padding: "5%" }} fontSize={fontSize}/>
     </div>
   );
 };

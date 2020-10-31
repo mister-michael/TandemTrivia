@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import API from "./modules/apiManager";
-import shuffle from './modules/mixItUp';
+import mixItUp from './modules/mixItUp';
 import TandemTrivia from "./TandemTrivia";
 
 function App() {
@@ -9,9 +9,8 @@ function App() {
 
   async function getQs() {
     await API.get().then((resp) => {
-      console.log(resp);
-      const shuffledResp = shuffle(resp);
-      setRandomTen(shuffledResp.splice(0, 10));
+      const mixedResp = mixItUp(resp);
+      setRandomTen(mixedResp.splice(0, 10));
     });
   }
 

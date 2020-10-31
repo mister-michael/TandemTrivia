@@ -2,7 +2,7 @@ import React from "react";
 
 import colors from "../../modules/colors";
 
-const CircleIcon = ({ number }) => {
+const CircleIcon = ({ number, fontSize = "30px"}) => {
   return (
     <div
       style={{
@@ -10,14 +10,14 @@ const CircleIcon = ({ number }) => {
         backgroundColor: "white",
         borderRadius: "50%",
         display: "flex",
-        height: "3vh",
+        height: "2vh",
         justifyContent: "center",
         padding: "5%",
-        width: "3vh",
+        width: "2vh",
       }}
     >
       <div
-        style={{ alignSelf: "center", fontWeight: "bold", color: colors.black }}
+        style={{ alignSelf: "center", fontWeight: "normal", color: colors.gray, fontSize: fontSize }}
       >
         {number}
       </div>

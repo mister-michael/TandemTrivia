@@ -1,6 +1,6 @@
 import React from "react";
+
 import Answers from "./Answers";
-import Button from "./Button";
 import CardHeader from "./CardHeader";
 
 const QuestionCard = ({
@@ -16,7 +16,17 @@ const QuestionCard = ({
 }) => {
   return (
     <>
-      <div id={`container-${questionId}`} style={{ display: "block" }}>
+      <div
+        id={`container-${questionId}`}
+        style={{
+          display: "block",
+          borderRadius: "20px",
+          overflow: "hidden",
+          borderColor: bgColor,
+          borderWidth: "3px",
+          borderStyle: "solid",
+        }}
+      >
         <CardHeader
           bgColor={bgColor}
           fontColor={fontColor}
@@ -33,6 +43,7 @@ const QuestionCard = ({
             buttonId={questionId}
             name="next"
             handleFunction={next}
+            fontColor={fontColor}
           />
         </div>
       </div>

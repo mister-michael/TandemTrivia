@@ -8,6 +8,7 @@ const Answers = ({
   incorrectAnswers,
   correctAnswer,
   bgColor,
+  fontColor,
   updateScore,
   buttonId,
   name,
@@ -17,9 +18,6 @@ const Answers = ({
 
   for (let i = 0; i < incorrectAnswers.length; i++)
     answerArray.push(incorrectAnswers[i]);
-
-  //   console.log(answerArray);
-  //   console.log(mixItUp(answerArray));
 
   const shuffledArray = mixItUp(answerArray);
 
@@ -32,10 +30,9 @@ const Answers = ({
     const theCorrectAnswer = document.getElementById(`${correctAnswer}`);
     theCorrectAnswer.style.backgroundColor = bgColor;
     theCorrectAnswer.style.color = "white";
-    theCorrectAnswer.style.outlineColor = "gold";
-    theCorrectAnswer.style.outlineWidth = "2px";
-    theCorrectAnswer.style.outlineStyle = "solid";
-    theCorrectAnswer.style.borderWidth = "0px";
+    theCorrectAnswer.style.borderColor = "gold";
+    theCorrectAnswer.style.borderWidth = "2px";
+    theCorrectAnswer.style.borderStyle = "solid";
 
     theCorrectAnswer.style.fontWeight = "bold";
 
@@ -54,7 +51,7 @@ const Answers = ({
 
   const showButton = () => {
     const getButton = document.getElementById(`button-div-${buttonId}`);
-    getButton.style.display = "block";
+    getButton.style.display = "flex";
   };
 
   const nextQuestion = () => {
@@ -66,8 +63,6 @@ const Answers = ({
     if (buttonId === "0" || buttonId === "11") {
       const getButton = document.getElementById(`button-div-${buttonId}`);
       getButton.style.display = "block";
-      console.log(getButton);
-      console.log(buttonId, "buttonId");
     }
   }, []);
   return (
@@ -76,20 +71,21 @@ const Answers = ({
         {shuffledArray.map((res) => (
           <>
             <div
-              key={res}
+            
+              key={`answer--${res}`}
               style={{
                 backgroundColor: "lightgray",
-                borderColor: "black",
-                borderWidth: "1px",
-                borderStyle: "solid",
                 margin: "4px",
                 padding: "10px",
                 paddingTop: "10px",
                 marginTop: "20px",
                 paddingLeft: "20px",
-                width: "40%"
+                width: "40%",
+                cursor: "pointer",
+                fontWeight: "bold",
+                justifyContent: "center",
+                borderRadius: "5px"
               }}
-              // for={res}
               id={res}
               onClick={(e) => {
                 showButton();
@@ -101,12 +97,14 @@ const Answers = ({
           </>
         ))}
       </div>
-      <div id={`button-div-${buttonId}`} style={{ display: "none" }}>
+      <div id={`button-div-${buttonId}`} style={{ display: "none", marginTop: "20px", marginLeft: "400px" }}>
         <Button
           name={name}
           buttonId={buttonId}
           name="next"
           handleFunction={nextQuestion}
+          bgColor={bgColor}
+          fontColor={fontColor}
         >
           next
         </Button>
