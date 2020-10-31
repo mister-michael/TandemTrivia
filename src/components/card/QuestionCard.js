@@ -6,7 +6,7 @@ import CardHeader from "./CardHeader";
 const QuestionCard = ({
   bgColor,
   correctAnswer,
-  questionId = {questionId },
+  questionId = { questionId },
   fontColor,
   incorrectAnswers,
   next,
@@ -14,8 +14,6 @@ const QuestionCard = ({
   scoreCounter,
   updateScore,
 }) => {
-
-
   return (
     <>
       <div id={`container-${questionId}`} style={{ display: "block" }}>
@@ -25,7 +23,6 @@ const QuestionCard = ({
           question={question}
         />
         <div style={{ padding: "5%" }}>
-          
           <Answers
             key={`answers--${questionId}`}
             bgColor={bgColor}
@@ -37,11 +34,7 @@ const QuestionCard = ({
             name="next"
             handleFunction={next}
           />
-          
         </div>
-
-        {/* <Button name={"submit"} /> */}
-
       </div>
     </>
   );

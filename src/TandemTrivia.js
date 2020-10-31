@@ -5,8 +5,6 @@ import SideBar from "./components/nav/SideBar";
 import QuizZone from "./QuizZone";
 
 const TandemTrivia = ({ randomTen }) => {
-  const [currentTab, setCurrentTab] = useState();
-  const [lastTab, setLastTab] = useState();
 
   return (
     <>
@@ -16,15 +14,10 @@ const TandemTrivia = ({ randomTen }) => {
           flexDirection: "row",
         }}
       >
-        <SideBar
-          currentTab={currentTab}
-          setCurrentTab={setCurrentTab}
-          lastTab={lastTab}
-          setLastTab={setLastTab}
-        />
+        <SideBar />
         <div
           style={{
-            margin: "5%",
+            margin: "45px",
           }}
         >
           <QuizZone randomTen={randomTen} />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import colors from "./modules/colors";
 import QuestionCard from "./components/card/QuestionCard";
+import StartScreen from "./components/card/StartScreen";
 
 const QuizZone = ({ randomTen }) => {
   let scoreCounter = 0;
@@ -24,10 +25,15 @@ const QuizZone = ({ randomTen }) => {
   };
 
   return (
-    <div>
+    <div style={{
+      maxWidth: "400px"
+    }}>
       {randomTen && (
         <>
           <div id="div-0" style={{ display: "block" }}>
+            <StartScreen next={next} />
+          </div>
+          {/* <div id="div-0" style={{ display: "block" }}>
             <QuestionCard
               display="true"
               questionId="0"
@@ -39,7 +45,7 @@ const QuizZone = ({ randomTen }) => {
               next={next}
               updateScore={updateScore}
             />
-          </div>
+          </div> */}
           <div id="div-1" style={{ display: "none" }}>
             <QuestionCard
               questionId="1"
@@ -68,6 +74,7 @@ const QuizZone = ({ randomTen }) => {
             <QuestionCard
               questionId="3"
               bgColor={colors.yellow}
+              fontColor={colors.black}
               question={randomTen[2].question}
               incorrectAnswers={randomTen[2].incorrect}
               correctAnswer={randomTen[2].correct}
@@ -77,8 +84,9 @@ const QuizZone = ({ randomTen }) => {
           </div>
           <div id="div-4" style={{ display: "none" }}>
             <QuestionCard
+              fontColor={colors.black}
               questionId="4"
-              bgColor={colors.yellow}
+              bgColor={colors.lightGreen}
               question={randomTen[3].question}
               incorrectAnswers={randomTen[3].incorrect}
               correctAnswer={randomTen[3].correct}
@@ -89,7 +97,8 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-5" style={{ display: "none" }}>
             <QuestionCard
               questionId="5"
-              bgColor={colors.lightGreen}
+              fontColor={colors.black}
+              bgColor={colors.green}
               question={randomTen[4].question}
               incorrectAnswers={randomTen[4].incorrect}
               correctAnswer={randomTen[4].correct}
@@ -100,6 +109,7 @@ const QuizZone = ({ randomTen }) => {
           <div id="div-6" style={{ display: "none" }}>
             <QuestionCard
               questionId="6"
+              fontColor={colors.black}
               bgColor={colors.cyan}
               question={randomTen[5].question}
               incorrectAnswers={randomTen[5].incorrect}
