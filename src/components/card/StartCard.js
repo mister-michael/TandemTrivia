@@ -3,7 +3,7 @@ import colors from "../../modules/colors";
 import Button from "./Button";
 import CardHeader from "./CardHeader";
 
-const StartScreen = ({ next }) => {
+const StartCard = ({ next }) => {
   const correctAnswer = "Yes Indeedy Do";
 
   const answers = [
@@ -84,4 +84,4 @@ const StartScreen = ({ next }) => {
   );
 };
 
-export default StartScreen;
+export default StartCard;

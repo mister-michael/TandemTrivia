@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import colors from "./modules/colors";
 import QuestionCard from "./components/card/QuestionCard";
-import StartScreen from "./components/card/StartScreen";
+import StartCard from "./components/card/StartCard";
+import EndCard from "./components/card/EndCard";
 
 const QuizZone = ({ randomTen }) => {
   let scoreCounter = 0;
@@ -25,27 +26,17 @@ const QuizZone = ({ randomTen }) => {
   };
 
   return (
-    <div style={{
-      maxWidth: "400px"
-    }}>
+    <div
+      style={{
+        maxWidth: "400px",
+      }}
+    >
       {randomTen && (
         <>
           <div id="div-0" style={{ display: "block" }}>
-            <StartScreen next={next} />
+            <StartCard next={next} />
           </div>
-          {/* <div id="div-0" style={{ display: "block" }}>
-            <QuestionCard
-              display="true"
-              questionId="0"
-              bgColor={colors.black}
-              fontColor={"white"}
-              question={"Click Next to Begin Your Quiz"}
-              incorrectAnswers={""}
-              correctAnswer={""}
-              next={next}
-              updateScore={updateScore}
-            />
-          </div> */}
+
           <div id="div-1" style={{ display: "none" }}>
             <QuestionCard
               questionId="1"
@@ -164,6 +155,9 @@ const QuizZone = ({ randomTen }) => {
           </div>
         </>
       )}
+      <div id="div-11" style={{ display: "none" }}>
+        <EndCard score={scoreCounter} />
+      </div>
     </div>
   );
 };
