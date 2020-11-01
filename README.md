@@ -1,15 +1,15 @@
 # About the App
-![Logo](src/assets/TandemTriviaLogo30px.png) Tandem Trivia
+![StartCard](src/assets/StartCard.png)
 
 ## Table of Contents
   * [Overview](#overview)
   * [Challenges and Design](#challenges-and-design)
   * [Future Plans](#time-being-limited)
-  * [Install Instructions](#future-plans)
-  * [Technology Used](#install-instructions)
+  * [Install Instructions](#install-instructions)
+  * [Contact Info](#contact-me)
 
 ## Overview
-This is a code challenge given by Tandem and I had a lot of fun doing it. We were given a JSON file with 21 trivia question objects. Here's one for example.
+This is a code challenge offered by ![Tandem](https://madeintandem.com/) and I had a lot of fun with it. We were given a JSON file with 21 trivia question objects. Here's one for example.
 
 ```sh
     {
@@ -29,17 +29,17 @@ Built into the assignment were a few hurdles. Incorrect and Correct answers were
 
 What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it?
 
-I decided to start the app with a brief explainer and and example question to teach users about my system.
+As pictured at the top of this page, I decided to start the app with a brief explainer and and example question to teach users about my system.
 
-![StartCard](src/assets/StartCard.png)
-
-To maintain state, I avoided routing, instead I wrapped components in <div>s and toggled their displays throughout the process. The start quiz button hides the StarCard component and shows the QuestionCard component. The color of the question card corresponds to the highlighted color on the sidebar, letting the user know which question they are answering. 
+To maintain state, I avoided routing, instead I wrapped components in divs and toggled their displays throughout the process. The start quiz button hides the StarCard component and shows the QuestionCard component. The color of the question card corresponds to the highlighted color on the sidebar, letting the user know which question they are answering. 
 
 ![QuestionCard](src/assets/QuestionCard1.png)
 
 Upon selecting an answer, the correct answer is revealed and the user is presented with the "next" button. The next button updates a counter, which corresponds to the index of the Questions Array and the Colors Array, repopulating the QuestionCard component with the Next Question and correct Background Color and Font Color in the sequence.
 
 Upon completion of the quiz, the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question 1.
+
+![EndCard](src/assets/EndCard.png)
 
 ## Time Being Limited
 
@@ -55,7 +55,7 @@ In your terminal, clone this repo and install dependencies.
 ```sh
     git clone git@github.com:mister-michael/TandemTrivia.git
 ```
-Move to the project file and install dependencies.
+cd to the tandemtrivia directory and install dependencies.
 ```sh
     cd tandemtrivia
     npm install
@@ -64,14 +64,17 @@ After installation, start the app.
 ```sh
     npm start
 ```
-In a new terminal tab, go into the api folder and start a json server on port 8080.
+In a new terminal tab, cd into the api directory and start a json server on port 8080.
 ```sh
+    cd api
     json-server -p 8080 -w Apprentice_TandemFor400_Data.json
 ```
 
-## Contact
+## Contact Me
 
-I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my portfolio at [www.michaelclarknashville.com](https://www.michaelclarknashville.com/), and you can try my Front End Capstone [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
+I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my portfolio [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
+
+Thank you for checking out the app!
 
 
 
