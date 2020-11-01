@@ -45,7 +45,7 @@ Upon completion of the 10th question, the QuestionCard is hidden, the EndCard is
 
 The hardest part of building this application was the rainbow SideBar. 
 
-Time being limited, I was far into the build before I though to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformating most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
+Time being limited, I was far into the build before I thought to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformating most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
 
 Time being limited, I chose to use style objects in place of cascading stylesheets. This allowed me to see changes in the browser as I made them. In the future, I would like to replace the style objects with CSS files. Then, having classNames, I will use @media to design the app to respond to tablet and mobile screen sizes.
 
