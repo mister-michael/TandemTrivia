@@ -7,9 +7,9 @@ import Score from "./Score";
 const EndCard = ({ playAgain, score }) => {
   let scoreStatement = "Congrats! Your final score is...";
 
-  if (score === 0) scoreStatement = "Oh no! Your final score is...";
+  if (score === 0) scoreStatement = "Oops! Your final score is...";
   else if (score > 0 && score < 4)
-    scoreStatement = "Oops! Your final score is...";
+    scoreStatement = "Alright! Your final score is...";
   else if (score > 4 && score < 8)
     scoreStatement = "Good job! Your final score is...";
   else if (score > 8 && score < 10)
