@@ -9,11 +9,10 @@ function App() {
 
   async function getQs() {
     await API.get().then((resp) => {
-      
       const mixedResp = mixItUp(resp);
       setRandomTen(mixedResp.splice(0, 10));
     });
-  }
+  };
 
   useEffect(() => {
     getQs();
@@ -24,6 +23,6 @@ function App() {
       <TandemTrivia getQs={getQs} randomTen={randomTen}/>
     </div>
   );
-}
+};
 
 export default App;

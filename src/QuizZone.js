@@ -14,17 +14,6 @@ const QuizZone = ({ getQs, randomTen = null }) => {
     if (randomTen) setQuestionObject(randomTen[questionNumber]);
   }, [randomTen]);
 
-  const playAgain = () => {
-    console.log("play again function")
-    getQs();
-    document.getElementById("div-1").style.display = "none";
-    document.getElementById("div-1").style.display = "block";
-    document.getElementById("div-3").style.display = "none";
-    setScoreCount(0)
-    setQuestionNumber(0)
-
-  };
-
   const colorArray = [
     [colors.red, colors.white],
     [colors.orange, colors.white],
@@ -56,6 +45,15 @@ const QuizZone = ({ getQs, randomTen = null }) => {
 
   const updateScore = () => {
     setScoreCount(scoreCount + 1);
+  };
+
+  const playAgain = () => {
+    getQs();
+    document.getElementById("div-1").style.display = "none";
+    document.getElementById("div-1").style.display = "block";
+    document.getElementById("div-3").style.display = "none";
+    setScoreCount(0);
+    setQuestionNumber(0);
   };
 
   return (
