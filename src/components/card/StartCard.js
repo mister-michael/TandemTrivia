@@ -55,10 +55,10 @@ const StartCard = ({ next }) => {
                 marginRight: "4px",
               }}
             >
-              highlighted.
+              highlighted
             </a>{" "}
             <div>
-              Incorrect Answers will appear with{" "}
+              Incorrect Answers will appear in{" "}
               <a
                 style={{
                   color: "red",

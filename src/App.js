@@ -12,7 +12,7 @@ function App() {
       const mixedResp = mixItUp(resp);
       setRandomTen(mixedResp.splice(0, 10));
     });
-  }
+  };
 
   useEffect(() => {
     getQs();
@@ -20,9 +20,9 @@ function App() {
 
   return (
     <div style={{ minWidth: "900px" }}>
-      <TandemTrivia randomTen={randomTen}/>
+      <TandemTrivia getQs={getQs} randomTen={randomTen}/>
     </div>
   );
-}
+};
 
 export default App;

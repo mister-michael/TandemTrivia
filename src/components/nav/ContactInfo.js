@@ -16,7 +16,7 @@ const ContactInfo = () => {
           <a href="https://www.michaelclarknashville.com">portfolio</a>
         </div>
         <div style={{ color: "blue", fontSize: "40px" }}>
-          <a href="https://www.michaelclarknashville.com">hipstar</a>
+          <a href="https://www.hipstar.app">hipstar</a>
         </div>
       </div>
     </div>

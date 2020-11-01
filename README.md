@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# About the App
+![StartCard](src/assets/StartCard.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+  * [Overview](#overview)
+  * [Challenges and Design](#challenges-and-design)
+  * [Future Plans](#time-being-limited)
+  * [Install Instructions](#install-instructions)
+  * [Contact Me](#contact-me)
 
-## Available Scripts
+## Overview
+This is a code challenge offered by [Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia objects. Here's one for example.
 
-In the project directory, you can run:
+```sh
+    {
+    "question": "What was Tandem previous name?",
+    "incorrect": ["Tandem", "Burger Shack", "Extraordinary Humans"],
+    "correct": "Devmynd"
+  }
+```
 
-### `npm start`
+Applicants were instructed to build a trivia app which would present the user with ten randomly generated questions from the database. Upon answering a question, the user would be presented with the correct answer, and upon completing the quiz, the user would be presented with their final score.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We were given the freedom to choose with which language to build the app, I chose React.js.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Challenges and Design
 
-### `npm test`
+Built into the assignment were a few hurdles. Incorrect and Correct answers were separate objects. A shuffle method was required to collect random questions from the database, and to present the answers in a random order during the quiz. These were resolved easily with code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it? I began with a rudimentary design using the Figma wire-framing app. You can see my initial design ![here](https://www.figma.com/file/mc2V813T0JTI2aOWRKALgz/TandemTrivia?node-id=0%3A1).
 
-### `npm run build`
+As pictured at the top of this page, I decided to start the app with a brief explainer and and example question to teach users about my system.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To maintain state, I avoided routing, instead I wrapped components (StartCard, QuestionCard, EndCard) in divs and toggled their displays throughout the process. The start quiz button hides the StarCard component and shows the QuestionCard component. The color of the question card corresponds to the highlighted color on the sidebar, letting the user know which question they are answering. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![QuestionCard](src/assets/QuestionCard1.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Upon selecting an answer, the correct answer is revealed and the user is presented with the "next" button. The next button updates a counter, which corresponds to the index of the Questions Array and the Colors Array, repopulating the QuestionCard component with the Next Question and correct Background Color and Font Color in the sequence.
 
-### `npm run eject`
+Upon completion of the 10th question, the QuestionCard is hidden, the EndCard is displayed, and the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question One.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![EndCard](src/assets/EndCard.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Time Being Limited
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The hardest part of building this application was the rainbow SideBar. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Time being limited, I was far into the build before I thought to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformatting most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
 
-## Learn More
+Time being limited, I chose to use style objects in place of cascading stylesheets. This allowed me to see changes in the browser as I made them. In the future, I would like to replace the style objects with CSS files. Then, having classNames, I will use @media to design the app to respond to tablet and mobile screen sizes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Install Instructions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In your terminal, clone this repo and install dependencies.
+```sh
+    git clone git@github.com:mister-michael/TandemTrivia.git
+```
+cd to the tandemtrivia directory and install the dependency (React).
+```sh
+    cd tandemtrivia
+    npm install
+```
+After installation, start the app.
+```sh
+    npm start
+```
+In a new terminal tab, cd into the api directory and start a json-server on port 8080. If port 8080 and or localhost is not accessible on your machine, open src/modules/apiManager.js and edit the apiUrl variable accordingly.
+```sh
+    cd api
+    json-server -p 8080 -w Apprentice_TandemFor400_Data.json
+```
 
-### Code Splitting
+## Contact Me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone, [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
 
-### Analyzing the Bundle Size
+Thank you for checking out the app!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
