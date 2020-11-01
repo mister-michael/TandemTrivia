@@ -6,7 +6,7 @@
   * [Challenges and Design](#challenges-and-design)
   * [Future Plans](#time-being-limited)
   * [Install Instructions](#install-instructions)
-  * [Contact Info](#contact-me)
+  * [Contact Me](#contact-me)
 
 ## Overview
 This is a code challenge offered by ![Tandem](https://madeintandem.com/) and I had a lot of fun with it. We were given a JSON file with 21 trivia question objects. Here's one for example.
