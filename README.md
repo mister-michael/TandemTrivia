@@ -72,7 +72,7 @@ In a new terminal tab, cd into the api directory and start a json-server on port
 
 ## Contact Me
 
-I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone, [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
+I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone, [www.hipstar.app](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
 
 Thank you for checking out the app!
 
