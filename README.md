@@ -31,13 +31,13 @@ What made the challenge even more challenging, and more fun, was the room left f
 
 As pictured at the top of this page, I decided to start the app with a brief explainer and and example question to teach users about my system.
 
-To maintain state, I avoided routing, instead I wrapped components in divs and toggled their displays throughout the process. The start quiz button hides the StarCard component and shows the QuestionCard component. The color of the question card corresponds to the highlighted color on the sidebar, letting the user know which question they are answering. 
+To maintain state, I avoided routing, instead I wrapped components (StartCard, QuestionCard, EndCard) in divs and toggled their displays throughout the process. The start quiz button hides the StarCard component and shows the QuestionCard component. The color of the question card corresponds to the highlighted color on the sidebar, letting the user know which question they are answering. 
 
 ![QuestionCard](src/assets/QuestionCard1.png)
 
 Upon selecting an answer, the correct answer is revealed and the user is presented with the "next" button. The next button updates a counter, which corresponds to the index of the Questions Array and the Colors Array, repopulating the QuestionCard component with the Next Question and correct Background Color and Font Color in the sequence.
 
-Upon completion of the quiz, the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question 1.
+Upon completion of the 10th question, the QuestionCard is hidden and the EndCard is displayed and the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question 1.
 
 ![EndCard](src/assets/EndCard.png)
 
