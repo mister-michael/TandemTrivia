@@ -9,7 +9,7 @@
   * [Contact Me](#contact-me)
 
 ## Overview
-This is a code challenge offered by [Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia question objects. Here's one for example.
+This is a code challenge offered by [Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia objects. Here's one for example.
 
 ```sh
     {
@@ -25,9 +25,9 @@ We were given the freedom to choose with which language to build the app, I chos
 
 ## Challenges and Design
 
-Built into the assignment were a few hurdles. Incorrect and Correct answers were seperate objects. A shuffle method was required to collect random questions from the database, and to present the answers in a random order during the quiz. These were resolved easily with code.
+Built into the assignment were a few hurdles. Incorrect and Correct answers were separate objects. A shuffle method was required to collect random questions from the database, and to present the answers in a random order during the quiz. These were resolved easily with code.
 
-What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it? I began with a rudimentary design using the Figma wireframing app. You can see my inital design ![here](https://www.figma.com/file/mc2V813T0JTI2aOWRKALgz/TandemTrivia?node-id=0%3A1).
+What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it? I began with a rudimentary design using the Figma wire-framing app. You can see my initial design ![here](https://www.figma.com/file/mc2V813T0JTI2aOWRKALgz/TandemTrivia?node-id=0%3A1).
 
 As pictured at the top of this page, I decided to start the app with a brief explainer and and example question to teach users about my system.
 
@@ -45,7 +45,7 @@ Upon completion of the 10th question, the QuestionCard is hidden, the EndCard is
 
 The hardest part of building this application was the rainbow SideBar. 
 
-Time being limited, I was far into the build before I thought to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformating most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
+Time being limited, I was far into the build before I thought to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformatting most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
 
 Time being limited, I chose to use style objects in place of cascading stylesheets. This allowed me to see changes in the browser as I made them. In the future, I would like to replace the style objects with CSS files. Then, having classNames, I will use @media to design the app to respond to tablet and mobile screen sizes.
 
@@ -55,7 +55,7 @@ In your terminal, clone this repo and install dependencies.
 ```sh
     git clone git@github.com:mister-michael/TandemTrivia.git
 ```
-cd to the tandemtrivia directory and install dependencies.
+cd to the tandemtrivia directory and install the dependency (React).
 ```sh
     cd tandemtrivia
     npm install
@@ -64,7 +64,7 @@ After installation, start the app.
 ```sh
     npm start
 ```
-In a new terminal tab, cd into the api directory and start a json server on port 8080.
+In a new terminal tab, cd into the api directory and start a json-server on port 8080. If port 8080 and or localhost is not accessible on your machine, open src/modules/apiManager.js and edit the apiUrl variable accordingly.
 ```sh
     cd api
     json-server -p 8080 -w Apprentice_TandemFor400_Data.json
