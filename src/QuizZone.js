@@ -43,8 +43,7 @@ const QuizZone = ({ getQs, randomTen = null }) => {
       setQuestionNumber(questionNumber + 1);
       setCount(count + 1);
     } else {
-      // setQuestionObject(randomTen[questionNumber + 1]);
-      // setQuestionNumber(questionNumber + 1);
+      
       setCount(count + 1)
       document.getElementById("div-1").style.display = "none";
       document.getElementById("div-3").style.display = "block";

@@ -5,9 +5,7 @@ import CardHeader from "./CardHeader";
 import Score from "./Score";
 
 const EndCard = ({ playAgain, score }) => {
-  const refreshPage = () => {
-    window.location.reload();
-  };
+  //Conditional for cardheader question
   return (
     <div
       style={{

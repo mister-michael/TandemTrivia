@@ -9,7 +9,6 @@ const SideBar = ({ questionNumber }) => {
 
   const changeOpacity = () => {
     if (questionNumber === n && questionNumber > -1) {
-      console.log("In IT BABY");
       setN(n + 1);
       document.getElementById(`NavCard${n}`).style.opacity = "40%";
       document.getElementById(`NavCard${n + 1}`).style.opacity = "100%";
@@ -18,7 +17,6 @@ const SideBar = ({ questionNumber }) => {
 
   useEffect(() => {
     changeOpacity();
-    console.log("XXXXXXXXXX")
   }, [questionNumber]);
 
   return (
