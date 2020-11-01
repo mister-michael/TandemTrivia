@@ -8,7 +8,7 @@ const StartCard = ({ next }) => {
   const correctAnswer = "Yes Indeedy Do";
 
   const answers = mixItUp([
-    "Most definitely",
+    "Most Definitely",
     "Assuredly",
     "Yes Indeedy Do",
     "Totes McGotes",
