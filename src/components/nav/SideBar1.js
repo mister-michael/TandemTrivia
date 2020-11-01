@@ -1,34 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from 'react';
+import colors from '../../modules/colors';
+import ContactInfo from './ContactInfo';
+import NavCard from './NavCard';
 
-import colors from "../../modules/colors";
-import ContactInfo from "./ContactInfo";
-import NavCard from "./NavCard";
+const SideBar1 = ({questionNumber}) => {
 
-const SideBar = ({ questionNumber }) => {
-  const [n, setN] = useState(0);
-
-  const changeOpacity = () => {
-    if (questionNumber === n && questionNumber > -1) {
-      console.log("In IT BABY");
-      setN(n + 1);
-      document.getElementById(`NavCard${n}`).style.opacity = "40%";
-      document.getElementById(`NavCard${n + 1}`).style.opacity = "100%";
-    }
-  };
-
-  useEffect(() => {
-    changeOpacity();
-    console.log("XXXXXXXXXX")
-  }, [questionNumber]);
-
-  return (
-    <div
+    
+    return (
+        <div
+        id="SideBar1"
       style={{
         width: "25%",
         backgroundColor: "black",
         maxWidth: "900px",
         minHeight: "800px",
         height: "100vh",
+        zIndex: 2
       }}
     >
       <div id="NavCard0" style={{ opacity: "100%" }}>
@@ -43,7 +30,7 @@ const SideBar = ({ questionNumber }) => {
           opacity="100%"
         />
       </div>
-      <div id="NavCard1" style={{ opacity: "40%" }}>
+      <div id="NavCard1" style={{ opacity: "100%" }}>
         <NavCard
           dog={1}
           questionNumber={questionNumber}
@@ -54,7 +41,7 @@ const SideBar = ({ questionNumber }) => {
           opacity="40%"
         />
       </div>
-      <div id="NavCard2" style={{ opacity: "40%" }}>
+      <div id="NavCard2" style={{ opacity: "100%" }}>
         <NavCard
           dog={2}
           questionNumber={questionNumber}
@@ -65,7 +52,7 @@ const SideBar = ({ questionNumber }) => {
           opacity="40%"
         />
       </div>
-      <div id="NavCard3" style={{ opacity: "40%" }}>
+      <div id="NavCard3" style={{ opacity: "100%" }}>
         <NavCard
           dog={3}
           questionNumber={questionNumber}
@@ -75,7 +62,7 @@ const SideBar = ({ questionNumber }) => {
           number={"3"}
         />
         </div>
-        <div id="NavCard4" style={{ opacity: "40%" }}>
+        <div id="NavCard4" style={{ opacity: "100%" }}>
         <NavCard
           dog={4}
           questionNumber={questionNumber}
@@ -84,7 +71,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.lightGreen}
           number={"4"}
         /></div>
-        <div id="NavCard5" style={{ opacity: "40%" }}>
+        <div id="NavCard5" style={{ opacity: "100%" }}>
         <NavCard
           dog={5}
           questionNumber={questionNumber}
@@ -93,7 +80,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.green}
           number={"5"}
         /></div>
-        <div id="NavCard6" style={{ opacity: "40%" }}>
+        <div id="NavCard6" style={{ opacity: "100%" }}>
         <NavCard
           dog={6}
           questionNumber={questionNumber}
@@ -102,7 +89,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.cyan}
           number={"6"}
         /></div>
-        <div id="NavCard7" style={{ opacity: "40%" }}>
+        <div id="NavCard7" style={{ opacity: "100%" }}>
         <NavCard
           dog={7}
           questionNumber={questionNumber}
@@ -111,7 +98,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.lightBlue}
           number={"7"}
         /></div>
-        <div id="NavCard8" style={{ opacity: "40%" }}>
+        <div id="NavCard8" style={{ opacity: "100%" }}>
         <NavCard
           dog={8}
           questionNumber={questionNumber}
@@ -120,7 +107,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.blue}
           number={"8"}
         /></div>
-        <div id="NavCard9" style={{ opacity: "40%" }}>
+        <div id="NavCard9" style={{ opacity: "100%" }}>
         <NavCard
           dog={9}
           questionNumber={questionNumber}
@@ -129,7 +116,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.violet}
           number={"9"}
         /></div>
-        <div id="NavCard10" style={{ opacity: "40%" }}>
+        <div id="NavCard10" style={{ opacity: "100%" }}>
         <NavCard
           dog={10}
           questionNumber={questionNumber}
@@ -138,7 +125,7 @@ const SideBar = ({ questionNumber }) => {
           color={colors.magenta}
           number={"10"}
         /></div>
-        <div id="NavCard11" style={{ opacity: "40%" }}>
+        <div id="NavCard11" style={{ opacity: "100%" }}>
         <NavCard
           dog={11}
           questionNumber={questionNumber}
@@ -151,7 +138,7 @@ const SideBar = ({ questionNumber }) => {
       </div>
       <ContactInfo />
     </div>
-  );
+    );
 };
 
-export default SideBar;
+export default SideBar1;

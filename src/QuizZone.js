@@ -5,11 +5,13 @@ import EndCard from "./components/card/EndCard";
 import QuestionCard from "./components/card/QuestionCard";
 import StartCard from "./components/card/StartCard";
 import SideBar from "./components/nav/SideBar";
+import SideBar1 from "./components/nav/SideBar1";
 
 const QuizZone = ({ getQs, randomTen = null }) => {
   const [questionObject, setQuestionObject] = useState(null);
-  const [questionNumber, setQuestionNumber] = useState(-1);
+  const [questionNumber, setQuestionNumber] = useState(0);
   const [scoreCount, setScoreCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (randomTen) setQuestionObject(randomTen[questionNumber]);
@@ -32,13 +34,18 @@ const QuizZone = ({ getQs, randomTen = null }) => {
     document.getElementById("div-0").style.display = "none";
 
     document.getElementById("div-1").style.display = "block";
+    setCount(count + 1);
   };
 
   const next = () => {
     if (questionNumber !== 9) {
       setQuestionObject(randomTen[questionNumber + 1]);
       setQuestionNumber(questionNumber + 1);
+      setCount(count + 1);
     } else {
+      // setQuestionObject(randomTen[questionNumber + 1]);
+      // setQuestionNumber(questionNumber + 1);
+      setCount(count + 1)
       document.getElementById("div-1").style.display = "none";
       document.getElementById("div-3").style.display = "block";
     }
@@ -49,18 +56,24 @@ const QuizZone = ({ getQs, randomTen = null }) => {
   };
 
   const playAgain = () => {
-    getQs();
     document.getElementById("div-1").style.display = "none";
     document.getElementById("div-1").style.display = "block";
     document.getElementById("div-3").style.display = "none";
     setScoreCount(0);
     setQuestionNumber(0);
+    setCount(1)
+    getQs();
   };
 
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <SideBar key={"sidebar"} questionNumber={questionNumber}/>
+        {!count || count === 11 ? (
+          <SideBar1 />
+        ) : (
+          <SideBar key={"sidebar"} questionNumber={questionNumber} />
+        )}
+
         <div>
           <div style={{ margin: "25px" }}>
             <div
