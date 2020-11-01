@@ -9,7 +9,7 @@
   * [Contact Me](#contact-me)
 
 ## Overview
-This is a code challenge offered by ![Tandem](https://madeintandem.com/) and I had a lot of fun with it. We were given a JSON file with 21 trivia question objects. Here's one for example.
+This is a code challenge offered by ![Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia question objects. Here's one for example.
 
 ```sh
     {
@@ -37,7 +37,7 @@ To maintain state, I avoided routing, instead I wrapped components (StartCard, Q
 
 Upon selecting an answer, the correct answer is revealed and the user is presented with the "next" button. The next button updates a counter, which corresponds to the index of the Questions Array and the Colors Array, repopulating the QuestionCard component with the Next Question and correct Background Color and Font Color in the sequence.
 
-Upon completion of the 10th question, the QuestionCard is hidden and the EndCard is displayed and the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question 1.
+Upon completion of the 10th question, the QuestionCard is hidden, the EndCard is displayed, and the user is presented with a conditionally rendered message above their final tally. The "play again" button, instead of refreshing the page and bringing the user to the StartCard tutorial, fetches ten random questions from the database and begins a new quiz at Question One.
 
 ![EndCard](src/assets/EndCard.png)
 
@@ -47,7 +47,7 @@ The hardest part of building this application was the rainbow SideBar.
 
 Time being limited, I was far into the build before I though to make the SideBar dynamic. Because of how I engineered components, and related question numbers to indexes of an array, I was unable to quickly build a single dynamic SideBar component, as the solution I discovered would have required reformating most of the Quiz Components. As I proceed with this application, I plan to not only build a single, dynamic SideBar component, but to replace the "tab numbers" with "correct" or "incorrect" icons upon completion of the quiz.
 
-Time being limited, I chose to use style objects in place of cascading stylesheets. This allowed me to see changes in the browser as I made them. In the future, I would like to replace the style objects with CSS. Then, having classnames, I will use @media to design the app to respond to tablet and mobile screen sizes.
+Time being limited, I chose to use style objects in place of cascading stylesheets. This allowed me to see changes in the browser as I made them. In the future, I would like to replace the style objects with CSS files. Then, having classNames, I will use @media to design the app to respond to tablet and mobile screen sizes.
 
 # Install Instructions
 
@@ -72,7 +72,7 @@ In a new terminal tab, cd into the api directory and start a json server on port
 
 ## Contact Me
 
-I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my portfolio [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
+I hope you enjoyed the app, please feel free to reach out on [LinkedIn](https://www.linkedin.com/in/michaelclarknashville/). You can view my [portfolio](https://www.michaelclarknashville.com/), and you can try my Front End Capstone, [Hipstar](https://www.hipstar.app), a functional movie rating site which connects user based on their least favorite films.
 
 Thank you for checking out the app!
 
