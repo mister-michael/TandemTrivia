@@ -9,15 +9,15 @@ const TandemTrivia = ({ getQs, randomTen }) => {
   return (
     <>
       <Header key={"header"} />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      {/* <div style={{ display: "flex", flexDirection: "row" }}>
         <SideBar key={"sidebar"} />
         <div>
-          <div style={{ margin: "25px" }}>
+          <div style={{ margin: "25px" }}> */}
             <QuizZone getQs={getQs} key={"QuizZone"} randomTen={randomTen} />
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
         <Footer />
-      </div>
+      {/* </div> */}
     </>
   );
 };

@@ -4,10 +4,11 @@ import colors from "./modules/colors";
 import EndCard from "./components/card/EndCard";
 import QuestionCard from "./components/card/QuestionCard";
 import StartCard from "./components/card/StartCard";
+import SideBar from "./components/nav/SideBar";
 
 const QuizZone = ({ getQs, randomTen = null }) => {
   const [questionObject, setQuestionObject] = useState(null);
-  const [questionNumber, setQuestionNumber] = useState(0);
+  const [questionNumber, setQuestionNumber] = useState(-1);
   const [scoreCount, setScoreCount] = useState(0);
 
   useEffect(() => {
@@ -58,37 +59,44 @@ const QuizZone = ({ getQs, randomTen = null }) => {
 
   return (
     <>
-      <div
-        style={{
-          maxWidth: "600px",
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-          marginLeft: "10px",
-        }}
-      >
-        <div id="div-0" style={{ display: "block" }}>
-          <StartCard next={startQuiz} />
-        </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <SideBar key={"sidebar"} questionNumber={questionNumber}/>
+        <div>
+          <div style={{ margin: "25px" }}>
+            <div
+              style={{
+                maxWidth: "600px",
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                marginLeft: "10px",
+              }}
+            >
+              <div id="div-0" style={{ display: "block" }}>
+                <StartCard next={startQuiz} />
+              </div>
 
-        {questionObject && (
-          <div id="div-1" style={{ display: "none" }}>
-            <QuestionCard
-              bgColor={colorArray[questionNumber][0]}
-              correctAnswer={questionObject.correct}
-              key={`questionCard--${questionNumber}`}
-              fontColor={colorArray[questionNumber][1]}
-              incorrectAnswers={questionObject.incorrect}
-              next={next}
-              question={questionObject.question}
-              questionId={questionNumber}
-              updateScore={updateScore}
-            />
+              {questionObject && (
+                <div id="div-1" style={{ display: "none" }}>
+                  <QuestionCard
+                    bgColor={colorArray[questionNumber][0]}
+                    correctAnswer={questionObject.correct}
+                    key={`questionCard`}
+                    fontColor={colorArray[questionNumber][1]}
+                    incorrectAnswers={questionObject.incorrect}
+                    next={next}
+                    question={questionObject.question}
+                    questionId={questionNumber}
+                    updateScore={updateScore}
+                  />
+                </div>
+              )}
+
+              <div id="div-3" style={{ display: "none" }}>
+                <EndCard playAgain={playAgain} score={scoreCount} />
+              </div>
+            </div>
           </div>
-        )}
-
-        <div id="div-3" style={{ display: "none" }}>
-          <EndCard playAgain={playAgain} score={scoreCount} />
         </div>
       </div>
     </>
