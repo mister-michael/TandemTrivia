@@ -9,7 +9,7 @@
   * [Contact Me](#contact-me)
 
 ## Overview
-This is a code challenge offered by ![Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia question objects. Here's one for example.
+This is a code challenge offered by [Tandem](https://madeintandem.com/) and I had a lot of fun with it. I began the challenge on a Thursday, with a Sunday deadline, and I was very pleased with the results. We were given a JSON file with 21 trivia question objects. Here's one for example.
 
 ```sh
     {
