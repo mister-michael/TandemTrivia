@@ -10,7 +10,7 @@ const SideBar = () => {
       style={{
         width: "25%",
         backgroundColor: "black",
-        maxWidth: "300px",
+        maxWidth: "900px",
         minHeight: "800px",
         height: "100vh",
       }}

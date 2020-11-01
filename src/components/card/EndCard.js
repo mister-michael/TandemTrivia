@@ -4,7 +4,7 @@ import Button from "./Button";
 import CardHeader from "./CardHeader";
 import Score from "./Score";
 
-const EndCard = ({ score }) => {
+const EndCard = ({ playAgain, score }) => {
   const refreshPage = () => {
     window.location.reload();
   };
@@ -38,7 +38,7 @@ const EndCard = ({ score }) => {
       >
         <Button
           name={"play again"}
-          handleFunction={refreshPage}
+          handleFunction={playAgain}
           bgColor={colors.black}
           fontColor={colors.white}
         />

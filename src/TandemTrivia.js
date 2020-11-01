@@ -5,7 +5,7 @@ import Header from "./components/nav/Header";
 import QuizZone from "./QuizZone";
 import SideBar from "./components/nav/SideBar";
 
-const TandemTrivia = ({ randomTen }) => {
+const TandemTrivia = ({ getQs, randomTen }) => {
   return (
     <>
       <Header key={"header"} />
@@ -13,7 +13,7 @@ const TandemTrivia = ({ randomTen }) => {
         <SideBar key={"sidebar"} />
         <div>
           <div style={{ margin: "25px" }}>
-            <QuizZone key={"QuizZone"} randomTen={randomTen} />
+            <QuizZone getQs={getQs} key={"QuizZone"} randomTen={randomTen} />
           </div>
         </div>
         <Footer />

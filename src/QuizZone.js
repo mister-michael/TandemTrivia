@@ -5,7 +5,7 @@ import EndCard from "./components/card/EndCard";
 import QuestionCard from "./components/card/QuestionCard";
 import StartCard from "./components/card/StartCard";
 
-const QuizZone = ({ randomTen = null }) => {
+const QuizZone = ({ getQs, randomTen = null }) => {
   const [questionObject, setQuestionObject] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [scoreCount, setScoreCount] = useState(0);
@@ -13,6 +13,17 @@ const QuizZone = ({ randomTen = null }) => {
   useEffect(() => {
     if (randomTen) setQuestionObject(randomTen[questionNumber]);
   }, [randomTen]);
+
+  const playAgain = () => {
+    console.log("play again function")
+    getQs();
+    document.getElementById("div-1").style.display = "none";
+    document.getElementById("div-1").style.display = "block";
+    document.getElementById("div-3").style.display = "none";
+    setScoreCount(0)
+    setQuestionNumber(0)
+
+  };
 
   const colorArray = [
     [colors.red, colors.white],
@@ -79,7 +90,7 @@ const QuizZone = ({ randomTen = null }) => {
         )}
 
         <div id="div-3" style={{ display: "none" }}>
-          <EndCard score={scoreCount} />
+          <EndCard playAgain={playAgain} score={scoreCount} />
         </div>
       </div>
     </>
