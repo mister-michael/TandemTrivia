@@ -5,7 +5,17 @@ import CardHeader from "./CardHeader";
 import Score from "./Score";
 
 const EndCard = ({ playAgain, score }) => {
-  //Conditional for cardheader question
+  let scoreStatement = "Congrats! Your final score is...";
+
+  if (score === 0) scoreStatement = "Oh no! Your final score is...";
+  else if (score > 0 && score < 4)
+    scoreStatement = "Oops! Your final score is...";
+  else if (score > 4 && score < 8)
+    scoreStatement = "Good job! Your final score is...";
+  else if (score > 8 && score < 10)
+    scoreStatement = "Wow! Your final score is...";
+  else scoreStatement = "Fantastic! Your final score is...";
+
   return (
     <div
       style={{
@@ -14,16 +24,16 @@ const EndCard = ({ playAgain, score }) => {
         marginBottom: "20px",
         padding: "0px 10px",
         borderRadius: "20px",
-            overflow: "hidden",
-            borderColor: colors.black,
-            borderWidth: "3px",
-            borderStyle: "solid",
+        overflow: "hidden",
+        borderColor: colors.black,
+        borderWidth: "3px",
+        borderStyle: "solid",
       }}
     >
       <CardHeader
         bgColor={""}
         fontColor={colors.black}
-        question={"Congrats! Your final score is..."}
+        question={scoreStatement}
       />
       <Score score={score} />
       <div
