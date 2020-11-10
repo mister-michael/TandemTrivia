@@ -27,7 +27,7 @@ We were given the freedom to choose with which language to build the app, I chos
 
 Built into the assignment were a few hurdles. Incorrect and Correct answers were separate objects. A shuffle method was required to collect random questions from the database, and to present the answers in a random order during the quiz. These were resolved easily with code.
 
-What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it? I began with a rudimentary design using the Figma wire-framing app. You can see my initial design ![here](https://www.figma.com/file/mc2V813T0JTI2aOWRKALgz/TandemTrivia?node-id=0%3A1).
+What made the challenge even more challenging, and more fun, was the room left for UI/UX considerations. How is the user introduced to the app? How are they to understand how to use it? I began with a rudimentary design using the Figma wire-framing app. You can see my initial design [here](https://www.figma.com/file/mc2V813T0JTI2aOWRKALgz/TandemTrivia?node-id=0%3A1).
 
 As pictured at the top of this page, I decided to start the app with a brief explainer and and example question to teach users about my system.
 
